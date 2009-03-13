@@ -1,0 +1,58 @@
+NAME
+    Env::Sanctify - Lexically scoped sanctification of %ENV
+
+SYNOPSIS
+      my $sanctify = Env::Sanctify->sanctify( sanctify => [ '^POE' ] );
+
+      # do some stuff, fork some processes etc.
+
+      $sanctify->restore
+
+      { 
+
+        my $sanctify = Env::Sanctify->sanctify( env => { POE_TRACE_DEFAULT => 1 } );
+
+        # do some stuff, fork some processes etc.
+      }
+
+      # out of scope, %ENV is back to normal
+
+DESCRIPTION
+    Env::Sanctify is a module that provides lexically scoped manipulation
+    and sanctification of %ENV.
+
+    You can specify that it alter or add additional environment variables or
+    remove existing ones according to a list of matching regexen.
+
+    You can then either "restore" the environment back manually or let the
+    object fall out of scope, which automagically restores.
+
+    Useful for manipulating the environment that forked processes and
+    sub-processes will inherit.
+
+CONSTRUCTOR
+    "sanctify"
+        Creates an Env::Sanctify object. Takes two optional arguments:
+
+          'env', a hashref of env vars to add to %ENV;
+          'sanctify', an arrayref of regex pattern strings to match against current %ENV vars;
+
+        Any %ENV var that matches a "sanctify" regex is removed from the
+        resultant %ENV.
+
+METHODs
+    "restore"
+        Explicitly restore the previous %ENV. This is called automagically
+        when the object is "DESTROY"ed, for instance, when it goes out of
+        scope.
+
+AUTHOR
+    Chris "BinGOs" Williams <chris@bingosnet.co.uk>
+
+LICENSE
+    Copyright © Chris Williams
+
+    This module may be used, modified, and distributed under the same terms
+    as Perl itself. Please see the license that came with your Perl
+    distribution for details.
+

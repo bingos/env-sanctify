@@ -1,0 +1,5 @@
+Env::Sanctify
+=============
+
+0.04	Tue Feb 10 12:02:14 GMT 2009
+	- Fixed the regex sanctification and updated the tests to check this

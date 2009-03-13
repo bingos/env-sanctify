@@ -1,0 +1,10 @@
+use strict;
+use inc::Module::Install;
+name 'Env-Sanctify';
+author 'Chris Williams <chris@bingosnet.co.uk>';
+version_from 'lib/Env/Sanctify.pm';
+abstract_from 'lib/Env/Sanctify.pm';
+license 'perl';
+perl_version '5.006';
+build_requires 'Test::More' => 0.47;
+WriteAll();
