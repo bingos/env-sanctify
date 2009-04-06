@@ -6,6 +6,7 @@ inc/Module/Install/Can.pm
 inc/Module/Install/Fetch.pm
 inc/Module/Install/Makefile.pm
 inc/Module/Install/Metadata.pm
+inc/Module/Install/Repository.pm
 inc/Module/Install/Win32.pm
 inc/Module/Install/WriteAll.pm
 lib/Env/Sanctify.pm
@@ -18,5 +19,6 @@ t/00_compile.t
 t/01_sanctify.t
 t/02_destroy.t
 t/03_no_opts.t
+t/04_zapenv.t
 t/99_pod.t
 t/99_pod_coverage.t

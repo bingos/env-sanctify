@@ -7,4 +7,5 @@ abstract_from 'lib/Env/Sanctify.pm';
 license 'perl';
 perl_version '5.006';
 build_requires 'Test::More' => 0.47;
+auto_set_repository;
 WriteAll();
