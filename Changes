@@ -1,6 +1,9 @@
 Env::Sanctify
 =============
 
+1.02	Tue Apr  7 21:40:42 BST 2009
+	- Make auto_set_repository() only run at author-time
+
 1.00	Mon Apr  6 09:18:45 BST 2009
 	- Bumped the version number to a 'stable' release.
 	- added auto setting of repository to META.yml
