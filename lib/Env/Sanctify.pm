@@ -103,4 +103,28 @@ for instance, when it goes out of scope.
 
 =back
 
+=head1 CAVEATS
+
+It has been reported that redefining the Env::Sanctify object causes unexpected behaviour.
+
+  use strict;
+  use warnings;
+
+  use Env::Sanctify;
+
+  $ENV{TEST} = 'Test thing';
+
+  my $sanctify = Env::Sanctify->sanctify( sanctify => [ 'TEST' ] );
+
+  printf "My ENV{TEST}: %s\n", $ENV{TEST};
+
+  $sanctify = Env::Sanctify->sanctify( env => { TEST => 'Other answer' } );
+
+  printf "My ENV{TEST}: %s\n", $ENV{TEST};
+
+This script outputs:
+
+  My ENV{TEST}:
+  My ENV{TEST}: Test thing
+
 =cut
