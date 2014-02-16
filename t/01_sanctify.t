@@ -8,8 +8,8 @@ $ENV{SANCTIFY_ADDITIONAL_TEST} = 'Sanctify this';
 $ENV{SANCTIFY_RESTORE_TEST} = 'moocow';
 delete $ENV{SANCTIFY_NO_VAR};
 
-my $sanctify = Env::Sanctify->sanctify( 
-		sanctify => [ '^SANCTIFY_REGEX_TEST', '^SANCTIFY_ADDITIONAL' ], 
+my $sanctify = Env::Sanctify->sanctify(
+		sanctify => [ '^SANCTIFY_REGEX_TEST', '^SANCTIFY_ADDITIONAL' ],
 		env => { SANCTIFY_RESTORE_TEST => 'pigdog',
 			 SANCTIFY_NO_VAR => 'nothing to see',
 	        },

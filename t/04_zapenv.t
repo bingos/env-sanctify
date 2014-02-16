@@ -5,8 +5,8 @@ use Env::Sanctify;
 
 my $save = scalar keys %ENV;
 
-my $sanctify = Env::Sanctify->sanctify( 
-		sanctify => [ '.*' ], 
+my $sanctify = Env::Sanctify->sanctify(
+		sanctify => [ '.*' ],
 );
 
 ok( scalar keys %ENV == 0, 'There is nothing in the %ENV' );
